@@ -5,7 +5,9 @@
   "main": "server.js",
   "type": "commonjs",
   "scripts": {
-    "test": "mocha tests --exit"
+    "test": "mocha tests --exit",
+    "start": "node server.js",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
@@ -37,7 +39,10 @@
     "xss-clean": "^0.1.4"
   },
   "devDependencies": {
+    "@eslint/js": "^9.3.0",
     "chai": "^5.1.1",
+    "eslint": "^9.3.0",
+    "globals": "^15.3.0",
     "mocha": "^10.4.0",
     "supertest": "^7.0.0"
   }
