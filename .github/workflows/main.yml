@@ -28,7 +28,7 @@ jobs:
         run: npm test
 
       - name: Zip application
-        run: zip -r scalable-inventory-management-system.zip .
+        run: zip -r scalable-inventory-management-system.zip . -x "node_modules/*"
 
       - name: Deploy to AWS Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v17
