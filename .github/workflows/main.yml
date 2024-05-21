@@ -35,8 +35,8 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: 'inventory-management-system'
-          environment_name: 'Inventory-management-system-env'
+          application_name: 'IMS'
+          environment_name: 'IMS-env'
           region: 'us-east-1'
           version_label: 'v${{ github.run_number }}'
           zip_file: 'scalable-inventory-management-system.zip'
