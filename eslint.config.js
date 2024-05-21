@@ -6,7 +6,7 @@ module.exports = [
   {
     files: ["*.js"],
     languageOptions: {
-      ecmaVersion: 12,
+      ecmaVersion: 2021,
       sourceType: "module",
       globals: {
         browser: true,
