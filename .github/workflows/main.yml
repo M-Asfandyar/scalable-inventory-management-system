@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: [ ubuntu-latest ]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22' 
+          node-version: '22'
 
       - name: Install dependencies
         run: npm install
@@ -28,15 +28,16 @@ jobs:
         run: npm test
 
       - name: Zip application
-        run: zip -r scalable-inventory-management-system.zip . -x "node_modules/*"
+        run: |
+          zip -r scalable-inventory-management-system.zip * .[^.]* -x "node_modules/*" "test/*" ".git/*"
 
       - name: Deploy to AWS Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v17
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: 'IMS'
           environment_name: 'IMS-env'
           region: 'us-east-1'
-          version_label: 'v${{ github.run_number }}'
-          zip_file: 'scalable-inventory-management-system.zip'
+          version_label: 'IMS-version-1'
+          deployment_package: 'scalable-inventory-management-system.zip'
