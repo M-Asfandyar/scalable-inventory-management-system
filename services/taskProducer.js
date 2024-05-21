@@ -1,3 +1,4 @@
+const Buffer = require('buffer').Buffer;
 const amqp = require('amqplib');
 
 async function sendTaskToQueue(task) {

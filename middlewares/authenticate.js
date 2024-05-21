@@ -1,3 +1,4 @@
+const process = require('process');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 
