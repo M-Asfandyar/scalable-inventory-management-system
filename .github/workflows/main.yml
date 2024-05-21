@@ -39,5 +39,6 @@ jobs:
           application_name: 'IMS'
           environment_name: 'IMS-env'
           region: 'us-east-1'
-          version_label: 'IMS-version-2'
+          version_label: 'IMS-version-${{ github.run_number }}'
           deployment_package: 'scalable-inventory-management-system.zip'
+          use_existing_version_if_available: true
