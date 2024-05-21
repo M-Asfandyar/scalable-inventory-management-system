@@ -39,5 +39,5 @@ jobs:
           application_name: 'IMS'
           environment_name: 'IMS-env'
           region: 'us-east-1'
-          version_label: 'IMS-version-1'
+          version_label: 'IMS-version-2'
           deployment_package: 'scalable-inventory-management-system.zip'
