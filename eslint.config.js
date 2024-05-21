@@ -5,20 +5,17 @@ module.exports = [
   },
   {
     files: ["*.js"],
-    env: {
-      node: true,
+    languageOptions: {
+      ecmaVersion: 12,
+      sourceType: "module",
+      globals: {
+        browser: true,
+        es2021: true,
+        node: true
+      }
     },
     rules: {
       "constructor-super": "error",
-      "no-unused-vars": ["error", { "args": "none" }],
-      "no-undef": "error",
-      // Add other rules as needed
-    },
-    globals: {
-      process: "readonly",
-      Buffer: "readonly",
-      describe: "readonly",
-      it: "readonly"
     }
   }
 ];
