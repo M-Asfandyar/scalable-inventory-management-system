@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
-          node-version: '20'
+          node-version: '18'  # Ensure this matches your local version and ESLint requirements
 
       - name: Install dependencies
         run: npm install
@@ -35,7 +35,7 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: 'your-application-name'
+          application_name: 'inventory-management-system'
           environment_name: 'Inventory-management-system-env'
           region: 'us-east-1'
           version_label: 'v${{ github.run_number }}'
